@@ -5,5 +5,5 @@
 -- Need to know why the KeyListener is not working -- (ON_GOING)
 (THE CODE IS IN THE GUI.java FILE)
 
--- Need to know why NullPointerException is getting called on line 56 -- (ON_GOING)
+-- Need to know why NullPointerException is getting called on line 56 -- (CLOSED)
 (THE CODE IS IN THE Initial_GUI.java FILE)
