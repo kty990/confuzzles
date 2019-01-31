@@ -1,5 +1,7 @@
 package gui; //CUSTOMIZATION MANDATORY FOR PROPER WORKING (ish)
 
+//THIS is a package client. You NEED both classes inside this package for it to work. If you do not have Results_GUI, then you need the code from Results_GUI and have to work it into this class
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -19,6 +21,8 @@ public class Initial_GUI { //gives questions (source not included, keylistener i
 	public static int i = 0;
 	
 	public static void main(String args[]) {
+		
+		
 		
 		frame = new JFrame();
 		
@@ -52,9 +56,9 @@ public class Initial_GUI { //gives questions (source not included, keylistener i
 				  getReply(); //part of example
 				  L1.setText(input); //example end.
 				  i += 1;
-				  if(i == 5) {
-					  frame.add(Results_GUI.panel);
-					  frame.remove(panel);
+				  if(i == 5) { //change 5 to your_list_of_questions.size()
+					  Results_GUI gui = new Results_GUI();
+					  frame.setVisible(false);
 				  }
 				  
 				  //This is where to put the method(s) that will be called when the button is pressed
@@ -83,6 +87,9 @@ public class Initial_GUI { //gives questions (source not included, keylistener i
 		frame.setTitle("Quiz Generator (Alpha)");
 		
 		frame.getContentPane().add(panel);
+		panel.setFocusable(true);
+		System.out.println(panel.isFocusable() + "panel");
+		System.out.println(frame.isFocusable() + "frame");
 		System.out.println(textField.getLocationOnScreen());
 	}
 	
@@ -111,14 +118,6 @@ public class Initial_GUI { //gives questions (source not included, keylistener i
 	private static void getReply() {
 		input = textField.getText();
 		textField.setText(null); //working
-	}
-	
-	
-	@SuppressWarnings("unused")
-	private static void showResults() { //fix by changing what panel is displayed + changing the size of the JFrame
-		if(input.equals("")) {
-			frame.setSize(1000, 400);
-		}
 	}
 	
 }
